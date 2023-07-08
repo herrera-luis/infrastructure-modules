@@ -27,13 +27,14 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_address_space"></a> [address\_space](#input\_address\_space) | assign cidr block to the virtual network | `string` | `"172.24.0.0/16"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | network environment | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | region | `string` | n/a | yes |
 | <a name="input_private_subnet-_name"></a> [private\_subnet-\_name](#input\_private\_subnet-\_name) | private subnet name | `string` | `"corp_private_subnet"` | no |
 | <a name="input_private_subnet_cidr"></a> [private\_subnet\_cidr](#input\_private\_subnet\_cidr) | assign a cidr block to the private subnet or use the default | `string` | `"172.24.1.0/24"` | no |
 | <a name="input_public_subnet_cidr"></a> [public\_subnet\_cidr](#input\_public\_subnet\_cidr) | assign a cidr block to the public subnet or use the default | `string` | `"172.24.2.0/24"` | no |
 | <a name="input_public_subnet_name"></a> [public\_subnet\_name](#input\_public\_subnet\_name) | public subnet name | `string` | `"corp_public_subnet"` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | resource group name | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | tags | `map(string)` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | tags | `map(string)` | n/a | yes |
 | <a name="input_vnet_name"></a> [vnet\_name](#input\_vnet\_name) | the name to be assigned to the VNET | `string` | n/a | yes |
 
 ## Outputs

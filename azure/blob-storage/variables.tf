@@ -34,3 +34,8 @@ variable "azurerm_storage_blob_name" {
   type        = string
   description = "Name of the Azure's Blob"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "tags"
+}

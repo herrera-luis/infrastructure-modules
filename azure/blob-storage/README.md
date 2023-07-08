@@ -34,6 +34,7 @@ No modules.
 | <a name="input_create_storage_container"></a> [create\_storage\_container](#input\_create\_storage\_container) | Flag to create Azure Container | `bool` | `true` | no |
 | <a name="input_location"></a> [location](#input\_location) | The Azure location where the resources exist. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of the resource group name on Azure | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | tags | `map(string)` | n/a | yes |
 
 ## Outputs
 
