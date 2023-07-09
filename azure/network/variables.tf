@@ -26,6 +26,18 @@ variable "public_subnet_cidr" {
   description = "assign a cidr block to the public subnet or use the default"
 }
 
+variable "private_subnet_service_endpoints" {
+  description = "The list of service endpoints to be added to the subnet"
+  type        = list(string)
+  default     = []
+}
+
+variable "public_subnet_service_endpoints" {
+  description = "The list of service endpoints to be added to the subnet"
+  type        = list(string)
+  default     = []
+}
+
 variable "private_subnet_name" {
   type        = string
   default     = "corp_private_subnet"

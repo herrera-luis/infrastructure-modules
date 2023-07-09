@@ -17,6 +17,7 @@ resource "azurerm_subnet" "private_subnet" {
   resource_group_name  = data.azurerm_resource_group.this.name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["${var.private_subnet_cidr}"]
+  service_endpoints    = var.private_subnet_service_endpoints
 }
 
 resource "azurerm_subnet" "public_subnet" {
@@ -24,4 +25,5 @@ resource "azurerm_subnet" "public_subnet" {
   resource_group_name  = data.azurerm_resource_group.this.name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["${var.public_subnet_cidr}"]
+  service_endpoints    = var.public_subnet_service_endpoints
 }
