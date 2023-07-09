@@ -3,7 +3,7 @@ variable "location" {
   description = "region"
 }
 
-variable "resource_group" {
+variable "resource_group_name" {
   type        = string
   description = "resource group name"
 }
@@ -26,7 +26,7 @@ variable "public_subnet_cidr" {
   description = "assign a cidr block to the public subnet or use the default"
 }
 
-variable "private_subnet-_name" {
+variable "private_subnet_name" {
   type        = string
   default     = "corp_private_subnet"
   description = "private subnet name"
