@@ -18,6 +18,17 @@ resource "azurerm_subnet" "private_subnet" {
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["${var.private_subnet_cidr}"]
   service_endpoints    = var.private_subnet_service_endpoints
+  dynamic "delegation" {
+    for_each = var.private_subnet_delegation_name != "" && var.private_subnet_service_delegation_name != "" && length(var.private_subnet_service_delegation_actions) > 0 ? [1] : []
+    content {
+      name = var.private_subnet_delegation_name
+
+      service_delegation {
+        name    = var.private_subnet_service_delegation_name
+        actions = var.private_subnet_service_delegation_actions
+      }
+    }
+  }
 }
 
 resource "azurerm_subnet" "public_subnet" {
@@ -26,4 +37,15 @@ resource "azurerm_subnet" "public_subnet" {
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["${var.public_subnet_cidr}"]
   service_endpoints    = var.public_subnet_service_endpoints
+  dynamic "delegation" {
+    for_each = var.public_subnet_delegation_name != "" && var.public_subnet_service_delegation_name != "" && length(var.public_subnet_service_delegation_actions) > 0 ? [1] : []
+    content {
+      name = var.public_subnet_delegation_name
+
+      service_delegation {
+        name    = var.public_subnet_service_delegation_name
+        actions = var.public_subnet_service_delegation_actions
+      }
+    }
+  }
 }

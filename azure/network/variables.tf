@@ -60,3 +60,41 @@ variable "tags" {
   type        = map(string)
   description = "tags"
 }
+
+##### Delegation variables ####
+
+variable "private_subnet_delegation_name" {
+  description = "The name of the delegation"
+  type        = string
+  default     = ""
+}
+
+variable "private_subnet_service_delegation_name" {
+  description = "The name of the service delegation"
+  type        = string
+  default     = ""
+}
+
+variable "private_subnet_service_delegation_actions" {
+  description = "The actions of the service delegation"
+  type        = list(string)
+  default     = []
+}
+
+variable "public_subnet_delegation_name" {
+  description = "The name of the delegation"
+  type        = string
+  default     = ""
+}
+
+variable "public_subnet_service_delegation_name" {
+  description = "The name of the service delegation"
+  type        = string
+  default     = ""
+}
+
+variable "public_subnet_service_delegation_actions" {
+  description = "The actions of the service delegation"
+  type        = list(string)
+  default     = []
+}
